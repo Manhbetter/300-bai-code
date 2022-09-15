@@ -22,24 +22,24 @@ public:
         // if list1 <= list2 -> node->next = list1, else = list2
         
         ListNode * dummy = new ListNode();
-        ListNode * Cur_node = dummy;
+        ListNode * cur_node = dummy;
         
         while(list1 && list2){
             if (list1->val <= list2->val){
-                Cur_node->next = list1;
+                cur_node->next = list1;
                 list1 = list1->next;
             }
             else {
-                Cur_node->next = list2;
+                cur_node->next = list2;
                 list2 = list2->next;
             }
-            Cur_node = Cur_node->next;
+            cur_node = cur_node->next;
         }
         if(list1){
-            Cur_node->next = list1;
+            cur_node->next = list1;
         }
         if(list2){
-            Cur_node->next = list2;
+            cur_node->next = list2;
         }
         return dummy->next;
     }
